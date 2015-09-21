@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LojaComercial.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace LojaComercial
     static class Global
     {
         private static Form mainForm;
+        private static Operador operador;
 
         public static Form MainForm
         {
@@ -17,5 +19,10 @@ namespace LojaComercial
             set { mainForm = value; }
         }
 
+        public static Operador Operador
+        {
+            get { return operador; }
+            set { operador = value; }
+        }
     }
 }

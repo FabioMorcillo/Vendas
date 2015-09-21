@@ -32,9 +32,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblOperador = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -56,9 +55,11 @@
             this.panel_Acao = new System.Windows.Forms.Panel();
             this.btnVender = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.imgAddOperador = new System.Windows.Forms.PictureBox();
+            this.imgLogOut = new System.Windows.Forms.PictureBox();
+            this.imgAddProduto = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -66,6 +67,9 @@
             this.panel_Produto.SuspendLayout();
             this.panel_Total.SuspendLayout();
             this.panel_Acao.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAddOperador)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogOut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAddProduto)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -81,15 +85,16 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.imgAddOperador);
             this.panel4.Controls.Add(this.lblHora);
             this.panel4.Controls.Add(this.lblData);
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Controls.Add(this.imgLogOut);
             this.panel4.Controls.Add(this.panel2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(317, 0);
+            this.panel4.Location = new System.Drawing.Point(275, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(696, 66);
+            this.panel4.Size = new System.Drawing.Size(738, 66);
             this.panel4.TabIndex = 6;
             // 
             // label2
@@ -98,43 +103,32 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 19);
+            this.label2.Location = new System.Drawing.Point(15, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 25);
             this.label2.TabIndex = 4;
             this.label2.Text = "Operador";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::LojaComercial.Properties.Resources.logout_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(433, 11);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(123, 11);
+            this.panel2.Controls.Add(this.lblOperador);
+            this.panel2.Location = new System.Drawing.Point(118, 11);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(295, 44);
             this.panel2.TabIndex = 5;
             // 
-            // label3
+            // lblOperador
             // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(289, 25);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Teste";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblOperador.BackColor = System.Drawing.Color.Transparent;
+            this.lblOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOperador.ForeColor = System.Drawing.Color.White;
+            this.lblOperador.Location = new System.Drawing.Point(3, 9);
+            this.lblOperador.Name = "lblOperador";
+            this.lblOperador.Size = new System.Drawing.Size(289, 25);
+            this.lblOperador.TabIndex = 2;
+            this.lblOperador.Text = "Teste";
+            this.lblOperador.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
             // 
@@ -167,7 +161,7 @@
             this.lblHora.BackColor = System.Drawing.Color.Transparent;
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.White;
-            this.lblHora.Location = new System.Drawing.Point(514, 35);
+            this.lblHora.Location = new System.Drawing.Point(558, 35);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(153, 25);
             this.lblHora.TabIndex = 10;
@@ -179,7 +173,7 @@
             this.lblData.BackColor = System.Drawing.Color.Transparent;
             this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblData.ForeColor = System.Drawing.Color.White;
-            this.lblData.Location = new System.Drawing.Point(514, 7);
+            this.lblData.Location = new System.Drawing.Point(558, 7);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(153, 25);
             this.lblData.TabIndex = 9;
@@ -245,6 +239,7 @@
             // panel_Produto
             // 
             this.panel_Produto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Produto.Controls.Add(this.imgAddProduto);
             this.panel_Produto.Controls.Add(this.txtQuantidade);
             this.panel_Produto.Controls.Add(this.label6);
             this.panel_Produto.Controls.Add(this.txtProduto);
@@ -275,7 +270,7 @@
             // 
             this.txtProduto.Location = new System.Drawing.Point(12, 107);
             this.txtProduto.Name = "txtProduto";
-            this.txtProduto.Size = new System.Drawing.Size(405, 22);
+            this.txtProduto.Size = new System.Drawing.Size(372, 22);
             this.txtProduto.TabIndex = 16;
             // 
             // label5
@@ -350,6 +345,37 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // imgAddOperador
+            // 
+            this.imgAddOperador.Image = global::LojaComercial.Properties.Resources.add_icon__1_;
+            this.imgAddOperador.Location = new System.Drawing.Point(419, 14);
+            this.imgAddOperador.Name = "imgAddOperador";
+            this.imgAddOperador.Size = new System.Drawing.Size(32, 32);
+            this.imgAddOperador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.imgAddOperador.TabIndex = 11;
+            this.imgAddOperador.TabStop = false;
+            // 
+            // imgLogOut
+            // 
+            this.imgLogOut.Image = global::LojaComercial.Properties.Resources.logout_icon;
+            this.imgLogOut.Location = new System.Drawing.Point(497, 11);
+            this.imgLogOut.Name = "imgLogOut";
+            this.imgLogOut.Size = new System.Drawing.Size(48, 48);
+            this.imgLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.imgLogOut.TabIndex = 6;
+            this.imgLogOut.TabStop = false;
+            this.imgLogOut.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // imgAddProduto
+            // 
+            this.imgAddProduto.Image = global::LojaComercial.Properties.Resources.add_icon__1_;
+            this.imgAddProduto.Location = new System.Drawing.Point(397, 107);
+            this.imgAddProduto.Name = "imgAddProduto";
+            this.imgAddProduto.Size = new System.Drawing.Size(22, 22);
+            this.imgAddProduto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgAddProduto.TabIndex = 19;
+            this.imgAddProduto.TabStop = false;
+            // 
             // FrmVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -367,7 +393,6 @@
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -378,6 +403,9 @@
             this.panel_Produto.PerformLayout();
             this.panel_Total.ResumeLayout(false);
             this.panel_Acao.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imgAddOperador)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogOut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAddProduto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -387,9 +415,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox imgLogOut;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblOperador;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
@@ -411,5 +439,7 @@
         private System.Windows.Forms.Panel panel_Acao;
         private System.Windows.Forms.Button btnVender;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.PictureBox imgAddOperador;
+        private System.Windows.Forms.PictureBox imgAddProduto;
     }
 }

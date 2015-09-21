@@ -16,6 +16,10 @@ namespace LojaComercial.view
         public FrmVenda()
         {
             InitializeComponent();
+
+            new ToolTip().SetToolTip(imgLogOut, "LogOut");
+            new ToolTip().SetToolTip(imgAddOperador, "Consulta operadores");
+            new ToolTip().SetToolTip(imgAddProduto, "Consulta produtos");
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -25,6 +29,17 @@ namespace LojaComercial.view
 
         private void frmVenda_Load(object sender, EventArgs e)
         {
+            lblOperador.Text = Global.Operador.Nome;
+
+            if (Global.Operador.Tipo == 0)
+            {
+                imgAddOperador.Visible = true;
+            }
+            else
+            {
+                imgAddOperador.Visible = false;
+            }
+
             NovaVenda();
         }
 
@@ -42,6 +57,10 @@ namespace LojaComercial.view
                 txtNumeroNota.Text = (numeroUltimaNota+1).ToString();
                 txtQuantidade.Text = "1";
                 txtProduto.Text = "";
+
+                lstProdutos.Items.Clear();
+
+                lblTotal.Text = "0,00";
 
                 txtProduto.Focus();
             }

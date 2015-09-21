@@ -34,6 +34,8 @@ namespace LojaComercial
 
             if (OperadorController.credencialValida(operador))
             {
+                Global.Operador = operador;
+
                 txtOperador.Focus();
 
                 this.Hide();
@@ -44,6 +46,8 @@ namespace LojaComercial
             }
             else
             {
+                Global.Operador = null;
+
                 MessageBox.Show("Login invalido !");
 
                 txtOperador.Focus();
