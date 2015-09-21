@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using LojaComercial.controller;
 
 namespace LojaComercial.dao
 {
@@ -111,6 +112,96 @@ namespace LojaComercial.dao
                     return false;
                 }
             }
+        }
+
+        public List<Produto> lista()
+        {
+            List<Produto> lista = new List<Produto>();
+
+            using (SqlCommand sqlCommand = new SqlCommand())
+            {
+                sqlCommand.Connection = SqlConn;
+
+                sqlCommand.CommandText = "select * from produtos";
+
+                try
+                {
+                    SqlDataReader dataReader;
+
+                    dataReader = sqlCommand.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        Produto produto = new Produto();
+
+                        produto.Id              = Int32.Parse(dataReader["id"].ToString());
+                        produto.CodBarras       = dataReader["codBarras"].ToString();
+                        produto.Descricao       = dataReader["descricao"].ToString();
+
+                        produto.Fornecedor      = FornecedorController.busca(Int32.Parse(dataReader["fornecedor_id"].ToString()));
+
+                        produto.DataValidade    = DateTime.Parse(dataReader["dataValidade"].ToString());
+
+                        produto.Quantidade      = Int32.Parse(dataReader["quantidade"].ToString());
+
+                        produto.PrecoCompra     = Double.Parse(dataReader["precoCompra"].ToString());
+                        produto.PrecoVenda      = Double.Parse(dataReader["precoVenda"].ToString());
+
+                        lista.Add(produto);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+
+            return lista;
+        }
+
+        public Produto busca(int id)
+        {
+            Produto produto = null;
+
+            using (SqlCommand sqlCommand = new SqlCommand())
+            {
+                sqlCommand.Connection = SqlConn;
+
+                sqlCommand.CommandText = "select * from produtos where id = @PId";
+
+                sqlCommand.Parameters.AddWithValue("PId", id);
+
+                try
+                {
+                    SqlDataReader dataReader;
+
+                    dataReader = sqlCommand.ExecuteReader();
+
+                    if (dataReader.Read())
+                    {
+                        produto = new Produto();
+
+                        produto.Id              = Int32.Parse(dataReader["id"].ToString());
+                        produto.CodBarras       = dataReader["codBarras"].ToString();
+                        produto.Descricao       = dataReader["descricao"].ToString();
+
+                        produto.Fornecedor      = FornecedorController.busca(Int32.Parse(dataReader["fornecedor_id"].ToString()));
+
+                        produto.DataValidade    = DateTime.Parse(dataReader["dataValidade"].ToString());
+
+                        produto.Quantidade      = Int32.Parse(dataReader["quantidade"].ToString());
+
+                        produto.PrecoCompra     = Double.Parse(dataReader["precoCompra"].ToString());
+                        produto.PrecoVenda      = Double.Parse(dataReader["precoVenda"].ToString());     
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+
+            return produto;
         }
     }
 }

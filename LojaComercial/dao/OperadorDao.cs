@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Reflection;
 
 namespace LojaComercial.dao
 {
@@ -148,6 +149,84 @@ namespace LojaComercial.dao
                     return false;
                 }
             }
+        }
+
+        public List<Operador> lista()
+        {
+            List<Operador> lista = new List<Operador>(); 
+
+            using (SqlCommand sqlCommand = new SqlCommand())
+            {
+                sqlCommand.Connection = SqlConn;
+
+                sqlCommand.CommandText = "select * from operadores";
+
+                try
+                {
+                    SqlDataReader dataReader;
+
+                    dataReader = sqlCommand.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        Operador operador = new Operador();
+
+                        operador.Id = Int32.Parse(dataReader["id"].ToString());
+                        operador.Senha = dataReader["senha"].ToString();
+                        operador.Nome = dataReader["nome"].ToString();
+                        operador.Tipo = Int32.Parse(dataReader["tipo"].ToString());
+                        operador.Endereco = dataReader["endereco"].ToString();
+                        operador.Telefone = dataReader["telefone"].ToString();
+
+                        lista.Add(operador);
+                    }
+               }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+
+            return lista;
+        }
+
+        public Operador busca(int id)
+        {
+            Operador operador = null;
+
+            using (SqlCommand sqlCommand = new SqlCommand())
+            {
+                sqlCommand.Connection = SqlConn;
+
+                sqlCommand.CommandText = "select * from operadores where id = @PId";
+
+                sqlCommand.Parameters.AddWithValue("PId", id);
+
+                try
+                {
+                    SqlDataReader dataReader;
+
+                    dataReader = sqlCommand.ExecuteReader();
+
+                    if (dataReader.Read())
+                    {
+                        operador = new Operador();
+
+                        operador.Id         = Int32.Parse(dataReader["id"].ToString());
+                        operador.Senha      = dataReader["senha"].ToString();
+                        operador.Nome       = dataReader["nome"].ToString();
+                        operador.Tipo       = Int32.Parse(dataReader["tipo"].ToString());
+                        operador.Endereco   = dataReader["endereco"].ToString();
+                        operador.Telefone   = dataReader["telefone"].ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+
+            return operador;
         }
     }
 }

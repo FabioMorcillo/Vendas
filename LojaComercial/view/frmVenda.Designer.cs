@@ -31,45 +31,45 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.imgAddOperador = new System.Windows.Forms.PictureBox();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.lblData = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.imgLogOut = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblOperador = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblHora = new System.Windows.Forms.Label();
-            this.lblData = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.lstProdutos = new System.Windows.Forms.ListBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.txtNumeroNota = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.panel_Acao = new System.Windows.Forms.Panel();
+            this.btnVender = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.panel_Total = new System.Windows.Forms.Panel();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel_Produto = new System.Windows.Forms.Panel();
+            this.imgAddProduto = new System.Windows.Forms.PictureBox();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtProduto = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel_Total = new System.Windows.Forms.Panel();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel_Acao = new System.Windows.Forms.Panel();
-            this.btnVender = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.imgAddOperador = new System.Windows.Forms.PictureBox();
-            this.imgLogOut = new System.Windows.Forms.PictureBox();
-            this.imgAddProduto = new System.Windows.Forms.PictureBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.txtNumeroNota = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lstProdutos = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAddOperador)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogOut)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel_Produto.SuspendLayout();
-            this.panel_Total.SuspendLayout();
             this.panel_Acao.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAddOperador)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogOut)).BeginInit();
+            this.panel_Total.SuspendLayout();
+            this.panel_Produto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgAddProduto)).BeginInit();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -97,6 +97,41 @@
             this.panel4.Size = new System.Drawing.Size(738, 66);
             this.panel4.TabIndex = 6;
             // 
+            // imgAddOperador
+            // 
+            this.imgAddOperador.Image = global::LojaComercial.Properties.Resources.add_icon__1_;
+            this.imgAddOperador.Location = new System.Drawing.Point(419, 14);
+            this.imgAddOperador.Name = "imgAddOperador";
+            this.imgAddOperador.Size = new System.Drawing.Size(32, 32);
+            this.imgAddOperador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.imgAddOperador.TabIndex = 11;
+            this.imgAddOperador.TabStop = false;
+            this.imgAddOperador.Click += new System.EventHandler(this.imgAddOperador_Click);
+            // 
+            // lblHora
+            // 
+            this.lblHora.BackColor = System.Drawing.Color.Transparent;
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.ForeColor = System.Drawing.Color.White;
+            this.lblHora.Location = new System.Drawing.Point(558, 35);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(153, 25);
+            this.lblHora.TabIndex = 10;
+            this.lblHora.Text = "10:10:10";
+            this.lblHora.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblData
+            // 
+            this.lblData.BackColor = System.Drawing.Color.Transparent;
+            this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData.ForeColor = System.Drawing.Color.White;
+            this.lblData.Location = new System.Drawing.Point(558, 7);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(153, 25);
+            this.lblData.TabIndex = 9;
+            this.lblData.Text = "01/01/2015";
+            this.lblData.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -108,6 +143,17 @@
             this.label2.Size = new System.Drawing.Size(95, 25);
             this.label2.TabIndex = 4;
             this.label2.Text = "Operador";
+            // 
+            // imgLogOut
+            // 
+            this.imgLogOut.Image = global::LojaComercial.Properties.Resources.logout_icon;
+            this.imgLogOut.Location = new System.Drawing.Point(497, 11);
+            this.imgLogOut.Name = "imgLogOut";
+            this.imgLogOut.Size = new System.Drawing.Size(48, 48);
+            this.imgLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.imgLogOut.TabIndex = 6;
+            this.imgLogOut.TabStop = false;
+            this.imgLogOut.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel2
             // 
@@ -156,30 +202,6 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // lblHora
-            // 
-            this.lblHora.BackColor = System.Drawing.Color.Transparent;
-            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHora.ForeColor = System.Drawing.Color.White;
-            this.lblHora.Location = new System.Drawing.Point(558, 35);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(153, 25);
-            this.lblHora.TabIndex = 10;
-            this.lblHora.Text = "10:10:10";
-            this.lblHora.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lblData
-            // 
-            this.lblData.BackColor = System.Drawing.Color.Transparent;
-            this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.ForeColor = System.Drawing.Color.White;
-            this.lblData.Location = new System.Drawing.Point(558, 7);
-            this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(153, 25);
-            this.lblData.TabIndex = 9;
-            this.lblData.Text = "01/01/2015";
-            this.lblData.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.panel_Acao);
@@ -192,95 +214,35 @@
             this.panel5.Size = new System.Drawing.Size(435, 457);
             this.panel5.TabIndex = 10;
             // 
-            // lstProdutos
+            // panel_Acao
             // 
-            this.lstProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstProdutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstProdutos.FormattingEnabled = true;
-            this.lstProdutos.ItemHeight = 20;
-            this.lstProdutos.Items.AddRange(new object[] {
-            "1 x Item 1",
-            "1 x Item 1",
-            "1 x Item 1",
-            "1 x Item 1",
-            "1 x Item 1"});
-            this.lstProdutos.Location = new System.Drawing.Point(435, 66);
-            this.lstProdutos.Name = "lstProdutos";
-            this.lstProdutos.Size = new System.Drawing.Size(578, 457);
-            this.lstProdutos.TabIndex = 4;
+            this.panel_Acao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Acao.Controls.Add(this.btnVender);
+            this.panel_Acao.Controls.Add(this.btnCancelar);
+            this.panel_Acao.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_Acao.Location = new System.Drawing.Point(0, 357);
+            this.panel_Acao.Name = "panel_Acao";
+            this.panel_Acao.Size = new System.Drawing.Size(435, 64);
+            this.panel_Acao.TabIndex = 24;
             // 
-            // panel6
+            // btnVender
             // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.txtNumeroNota);
-            this.panel6.Controls.Add(this.label4);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(435, 70);
-            this.panel6.TabIndex = 18;
+            this.btnVender.Location = new System.Drawing.Point(300, 15);
+            this.btnVender.Name = "btnVender";
+            this.btnVender.Size = new System.Drawing.Size(119, 36);
+            this.btnVender.TabIndex = 1;
+            this.btnVender.Text = "VENDER";
+            this.btnVender.UseVisualStyleBackColor = true;
             // 
-            // txtNumeroNota
+            // btnCancelar
             // 
-            this.txtNumeroNota.Location = new System.Drawing.Point(14, 32);
-            this.txtNumeroNota.Name = "txtNumeroNota";
-            this.txtNumeroNota.Size = new System.Drawing.Size(109, 22);
-            this.txtNumeroNota.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 12);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 17);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Número da Nota";
-            // 
-            // panel_Produto
-            // 
-            this.panel_Produto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_Produto.Controls.Add(this.imgAddProduto);
-            this.panel_Produto.Controls.Add(this.txtQuantidade);
-            this.panel_Produto.Controls.Add(this.label6);
-            this.panel_Produto.Controls.Add(this.txtProduto);
-            this.panel_Produto.Controls.Add(this.label5);
-            this.panel_Produto.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_Produto.Location = new System.Drawing.Point(0, 70);
-            this.panel_Produto.Name = "panel_Produto";
-            this.panel_Produto.Size = new System.Drawing.Size(435, 175);
-            this.panel_Produto.TabIndex = 22;
-            // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.Location = new System.Drawing.Point(12, 49);
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(109, 22);
-            this.txtQuantidade.TabIndex = 15;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 29);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 17);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Quantidade";
-            // 
-            // txtProduto
-            // 
-            this.txtProduto.Location = new System.Drawing.Point(12, 107);
-            this.txtProduto.Name = "txtProduto";
-            this.txtProduto.Size = new System.Drawing.Size(372, 22);
-            this.txtProduto.TabIndex = 16;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 87);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 17);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Produto";
+            this.btnCancelar.Location = new System.Drawing.Point(14, 15);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(117, 36);
+            this.btnCancelar.TabIndex = 2;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // panel_Total
             // 
@@ -315,56 +277,19 @@
             this.label7.Text = "TOTAL";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel_Acao
+            // panel_Produto
             // 
-            this.panel_Acao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_Acao.Controls.Add(this.btnVender);
-            this.panel_Acao.Controls.Add(this.btnCancelar);
-            this.panel_Acao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_Acao.Location = new System.Drawing.Point(0, 357);
-            this.panel_Acao.Name = "panel_Acao";
-            this.panel_Acao.Size = new System.Drawing.Size(435, 64);
-            this.panel_Acao.TabIndex = 24;
-            // 
-            // btnVender
-            // 
-            this.btnVender.Location = new System.Drawing.Point(300, 15);
-            this.btnVender.Name = "btnVender";
-            this.btnVender.Size = new System.Drawing.Size(119, 36);
-            this.btnVender.TabIndex = 1;
-            this.btnVender.Text = "VENDER";
-            this.btnVender.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(14, 15);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(117, 36);
-            this.btnCancelar.TabIndex = 2;
-            this.btnCancelar.Text = "CANCELAR";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // imgAddOperador
-            // 
-            this.imgAddOperador.Image = global::LojaComercial.Properties.Resources.add_icon__1_;
-            this.imgAddOperador.Location = new System.Drawing.Point(419, 14);
-            this.imgAddOperador.Name = "imgAddOperador";
-            this.imgAddOperador.Size = new System.Drawing.Size(32, 32);
-            this.imgAddOperador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.imgAddOperador.TabIndex = 11;
-            this.imgAddOperador.TabStop = false;
-            // 
-            // imgLogOut
-            // 
-            this.imgLogOut.Image = global::LojaComercial.Properties.Resources.logout_icon;
-            this.imgLogOut.Location = new System.Drawing.Point(497, 11);
-            this.imgLogOut.Name = "imgLogOut";
-            this.imgLogOut.Size = new System.Drawing.Size(48, 48);
-            this.imgLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.imgLogOut.TabIndex = 6;
-            this.imgLogOut.TabStop = false;
-            this.imgLogOut.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.panel_Produto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Produto.Controls.Add(this.imgAddProduto);
+            this.panel_Produto.Controls.Add(this.txtQuantidade);
+            this.panel_Produto.Controls.Add(this.label6);
+            this.panel_Produto.Controls.Add(this.txtProduto);
+            this.panel_Produto.Controls.Add(this.label5);
+            this.panel_Produto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_Produto.Location = new System.Drawing.Point(0, 70);
+            this.panel_Produto.Name = "panel_Produto";
+            this.panel_Produto.Size = new System.Drawing.Size(435, 175);
+            this.panel_Produto.TabIndex = 22;
             // 
             // imgAddProduto
             // 
@@ -375,6 +300,83 @@
             this.imgAddProduto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgAddProduto.TabIndex = 19;
             this.imgAddProduto.TabStop = false;
+            this.imgAddProduto.Click += new System.EventHandler(this.imgAddProduto_Click);
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.Location = new System.Drawing.Point(12, 49);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(109, 22);
+            this.txtQuantidade.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(9, 29);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 17);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Quantidade";
+            // 
+            // txtProduto
+            // 
+            this.txtProduto.Location = new System.Drawing.Point(12, 107);
+            this.txtProduto.Name = "txtProduto";
+            this.txtProduto.Size = new System.Drawing.Size(372, 22);
+            this.txtProduto.TabIndex = 16;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 87);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 17);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Produto";
+            // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.txtNumeroNota);
+            this.panel6.Controls.Add(this.label4);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(435, 70);
+            this.panel6.TabIndex = 18;
+            // 
+            // txtNumeroNota
+            // 
+            this.txtNumeroNota.Location = new System.Drawing.Point(14, 32);
+            this.txtNumeroNota.Name = "txtNumeroNota";
+            this.txtNumeroNota.Size = new System.Drawing.Size(109, 22);
+            this.txtNumeroNota.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(11, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(112, 17);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Número da Nota";
+            // 
+            // lstProdutos
+            // 
+            this.lstProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstProdutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstProdutos.FormattingEnabled = true;
+            this.lstProdutos.ItemHeight = 20;
+            this.lstProdutos.Items.AddRange(new object[] {
+            "1 x Item 1",
+            "1 x Item 1",
+            "1 x Item 1",
+            "1 x Item 1",
+            "1 x Item 1"});
+            this.lstProdutos.Location = new System.Drawing.Point(435, 66);
+            this.lstProdutos.Name = "lstProdutos";
+            this.lstProdutos.Size = new System.Drawing.Size(578, 457);
+            this.lstProdutos.TabIndex = 4;
             // 
             // FrmVenda
             // 
@@ -393,19 +395,19 @@
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAddOperador)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogOut)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.panel_Acao.ResumeLayout(false);
+            this.panel_Total.ResumeLayout(false);
             this.panel_Produto.ResumeLayout(false);
             this.panel_Produto.PerformLayout();
-            this.panel_Total.ResumeLayout(false);
-            this.panel_Acao.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imgAddOperador)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgAddProduto)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }

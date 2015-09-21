@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LojaComercial.model
 {
-    class Fornecedor
+    public class Fornecedor
     {
         private int id;
         private String nome;

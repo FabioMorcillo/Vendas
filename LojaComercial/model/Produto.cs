@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LojaComercial.model
 {
-    class Produto
+    public class Produto
     {
         private int         id;
         private String      codBarras;
@@ -16,7 +16,14 @@ namespace LojaComercial.model
         private int         quantidade;
         private double      precoCompra;
         private double      precoVenda;
-                
+
+        public Produto() { }
+
+        public Produto(int id)
+        {
+            this.id = id;
+        }
+
         public int Id
         {
             get { return id; }

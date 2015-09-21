@@ -116,5 +116,56 @@ namespace LojaComercial.controller
             return resultado;
         }
 
+        public static List<Operador> lista()
+        {
+            OperadorDao operadorDao = null;
+            List<Operador> resultado = null;
+
+            try
+            {
+                operadorDao = new OperadorDao();
+
+                resultado = operadorDao.lista();
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
+            finally
+            {
+                if (operadorDao != null)
+                {
+                    operadorDao.close();
+                }
+            }
+
+            return resultado;
+        }
+
+        public static Operador busca(int id)
+        {
+            OperadorDao operadorDao = null;
+            Operador operador = null;
+
+            try
+            {
+                operadorDao = new OperadorDao();
+
+                operador = operadorDao.busca(id);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
+            finally
+            {
+                if (operadorDao != null)
+                {
+                    operadorDao.close();
+                }
+            }
+
+            return operador;
+        }
     }
 }

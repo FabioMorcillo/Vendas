@@ -88,5 +88,56 @@ namespace LojaComercial.controller
             return resultado;
         }
 
+        public static List<Produto> lista()
+        {
+            ProdutoDao produtoDao = null;
+            List<Produto> resultado = null;
+
+            try
+            {
+                produtoDao = new ProdutoDao();
+
+                resultado = produtoDao.lista();
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
+            finally
+            {
+                if (produtoDao != null)
+                {
+                    produtoDao.close();
+                }
+            }
+
+            return resultado;
+        }
+
+        public static Produto busca(int id)
+        {
+            ProdutoDao produtoDao = null;
+            Produto produto = null;
+
+            try
+            {
+                produtoDao = new ProdutoDao();
+
+                produto = produtoDao.busca(id);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
+            finally
+            {
+                if (produtoDao != null)
+                {
+                    produtoDao.close();
+                }
+            }
+
+            return produto;
+        }
     }
 }

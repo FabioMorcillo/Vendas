@@ -92,6 +92,18 @@ namespace LojaComercial.view
             NovaVenda();
         }
 
-        
+        private void imgAddOperador_Click(object sender, EventArgs e)
+        {
+            FrmConsultaOperadores frmConsultaOperadores = new FrmConsultaOperadores();
+
+            frmConsultaOperadores.ShowDialog();
+        }
+
+        private void imgAddProduto_Click(object sender, EventArgs e)
+        {
+            FrmConsultaProdutos frmConsultaProdutos = new FrmConsultaProdutos();
+
+            frmConsultaProdutos.ShowDialog();
+        }
     }
 }

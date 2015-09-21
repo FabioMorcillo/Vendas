@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LojaComercial.model
 {
-    class Operador
+    public class Operador
     {
         private int id;
         private String senha;
@@ -14,7 +14,14 @@ namespace LojaComercial.model
         private String nome;
         private String endereco;
         private String telefone;
-        
+
+        public Operador() { }
+
+        public Operador(int id)
+        {
+            this.id = id;
+        }
+           
         public int Id
         {
             get { return id; }
