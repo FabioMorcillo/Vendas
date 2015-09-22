@@ -114,6 +114,8 @@ namespace LojaComercial.view
             frmProduto.inicializar(null);
 
             frmProduto.ShowDialog();
+
+            atualizarRegistros();
         }
 
         private void FrmConsultaProdutos_Load(object sender, EventArgs e)
@@ -124,6 +126,46 @@ namespace LojaComercial.view
         private void atualizarRegistros()
         {
             dataGridView1.DataSource = ProdutoController.lista();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id = 0;
+
+            try
+            {
+                id = Int32.Parse(dataGridView1["id", dataGridView1.CurrentRow.Index].Value.ToString());
+            }
+            catch
+            {
+                MessageBox.Show("Nenhum produto selecionado !");
+
+                return;
+            }
+
+            if (id > 0)
+            {
+                FrmProduto frmProduto = new FrmProduto();
+
+                Produto produto = ProdutoController.busca(id);
+
+                if (produto != null)
+                {
+                    Global.Produto = produto;
+
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Produto não encontrado !");
+
+                    atualizarRegistros();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nenhum produto selecionado !");
+            }
         }
     }
 }

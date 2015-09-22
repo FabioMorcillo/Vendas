@@ -13,6 +13,9 @@ namespace LojaComercial
         private static Form mainForm;
         private static Operador operador;
 
+        private static Produto produto;
+              
+        
         public static Form MainForm
         {
             get { return mainForm; }
@@ -23,6 +26,12 @@ namespace LojaComercial
         {
             get { return operador; }
             set { operador = value; }
+        }
+
+        public static Produto Produto
+        {
+            get { return produto; }
+            set { produto = value; }
         }
     }
 }

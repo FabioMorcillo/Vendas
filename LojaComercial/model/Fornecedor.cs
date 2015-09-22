@@ -11,6 +11,13 @@ namespace LojaComercial.model
         private int id;
         private String nome;
 
+        public Fornecedor() { }
+
+        public Fornecedor(int id)
+        {
+            this.id = id;
+        }
+
         public int Id
         {
             get { return id; }

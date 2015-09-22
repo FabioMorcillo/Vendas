@@ -152,7 +152,6 @@
             // 
             this.txtPrecoCompra.Location = new System.Drawing.Point(16, 416);
             this.txtPrecoCompra.Name = "txtPrecoCompra";
-            this.txtPrecoCompra.PasswordChar = '*';
             this.txtPrecoCompra.Size = new System.Drawing.Size(273, 22);
             this.txtPrecoCompra.TabIndex = 6;
             // 
@@ -169,7 +168,6 @@
             // 
             this.txtPrecoVenda.Location = new System.Drawing.Point(16, 476);
             this.txtPrecoVenda.Name = "txtPrecoVenda";
-            this.txtPrecoVenda.PasswordChar = '*';
             this.txtPrecoVenda.Size = new System.Drawing.Size(273, 22);
             this.txtPrecoVenda.TabIndex = 7;
             // 
@@ -209,6 +207,7 @@
             this.imgAddFornecedor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgAddFornecedor.TabIndex = 25;
             this.imgAddFornecedor.TabStop = false;
+            this.imgAddFornecedor.Click += new System.EventHandler(this.imgAddFornecedor_Click);
             // 
             // FrmProduto
             // 
@@ -235,7 +234,6 @@
             this.Name = "FrmProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmProduto";
-            this.Load += new System.EventHandler(this.FrmProduto_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgCadastrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCancelar)).EndInit();

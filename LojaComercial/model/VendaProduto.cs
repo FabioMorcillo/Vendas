@@ -29,5 +29,20 @@ namespace LojaComercial.model
             get { return precoVenda; }
             set { precoVenda = value; }
         }
+
+
+        public override string ToString()
+        {
+            String aux = new String('0', 3 - Quantidade.ToString().Length) + Quantidade.ToString();
+
+            aux += " X " + Produto.Descricao;
+
+            aux += new String('.', 30 - aux.Length);
+
+            aux += " R$ " + precoVenda.ToString("N2") ;
+
+            return aux;
+        }
+
     }
 }

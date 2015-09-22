@@ -56,6 +56,12 @@
     <Compile Include="dao\FornecedorDao.cs" />
     <Compile Include="dao\OperadorDao.cs" />
     <Compile Include="Global.cs" />
+    <Compile Include="view\FrmConsultaFornecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmConsultaFornecedores.Designer.cs">
+      <DependentUpon>FrmConsultaFornecedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\FrmConsultaOperadores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,12 @@
     </Compile>
     <Compile Include="view\FrmConsultaProdutos.Designer.cs">
       <DependentUpon>FrmConsultaProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmFornecedor.Designer.cs">
+      <DependentUpon>FrmFornecedor.cs</DependentUpon>
     </Compile>
     <Compile Include="view\FrmLogin.cs">
       <SubType>Form</SubType>
@@ -99,11 +111,17 @@
     <Compile Include="view\FrmVenda.Designer.cs">
       <DependentUpon>FrmVenda.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="view\FrmConsultaFornecedores.resx">
+      <DependentUpon>FrmConsultaFornecedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\FrmConsultaOperadores.resx">
       <DependentUpon>FrmConsultaOperadores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\FrmConsultaProdutos.resx">
       <DependentUpon>FrmConsultaProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmFornecedor.resx">
+      <DependentUpon>FrmFornecedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

@@ -1,4 +1,5 @@
 ﻿using LojaComercial.controller;
+using LojaComercial.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,8 @@ namespace LojaComercial.view
 {
     public partial class FrmVenda : Form
     {
+        private double total = 0;
+
         public FrmVenda()
         {
             InitializeComponent();
@@ -20,11 +23,6 @@ namespace LojaComercial.view
             new ToolTip().SetToolTip(imgLogOut, "LogOut");
             new ToolTip().SetToolTip(imgAddOperador, "Consulta operadores");
             new ToolTip().SetToolTip(imgAddProduto, "Consulta produtos");
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void frmVenda_Load(object sender, EventArgs e)
@@ -55,16 +53,24 @@ namespace LojaComercial.view
             else
             {
                 txtNumeroNota.Text = (numeroUltimaNota+1).ToString();
-                txtQuantidade.Text = "1";
-                txtProduto.Text = "";
 
                 lstProdutos.Items.Clear();
 
+                total = 0;
                 lblTotal.Text = "0,00";
 
-                txtProduto.Focus();
+                novoProduto();
             }
            
+        }
+
+        private void novoProduto()
+        {
+            txtQuantidade.Text = "1";
+            txtProduto.Text = "";
+
+            txtProduto.Focus();
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -103,7 +109,26 @@ namespace LojaComercial.view
         {
             FrmConsultaProdutos frmConsultaProdutos = new FrmConsultaProdutos();
 
+            Global.Produto = null;
+
             frmConsultaProdutos.ShowDialog();
+
+            if (Global.Produto != null)
+            {
+                VendaProduto vendaProduto = new VendaProduto();
+
+                vendaProduto.Produto    = Global.Produto;
+                vendaProduto.PrecoVenda = Global.Produto.PrecoVenda;
+                vendaProduto.Quantidade = Int32.Parse(txtQuantidade.Text);
+
+                lstProdutos.Items.Add(vendaProduto);
+
+                total += vendaProduto.Quantidade * vendaProduto.PrecoVenda;
+
+                lblTotal.Text = total.ToString("N2");
+
+                novoProduto();
+            }
         }
     }
 }

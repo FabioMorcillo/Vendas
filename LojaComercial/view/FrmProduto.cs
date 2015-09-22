@@ -73,6 +73,7 @@ namespace LojaComercial.view
             Produto produto = new Produto();
 
             produto.Descricao       = txtDescricao.Text;
+            produto.Fornecedor      = (Fornecedor)cbFornecedor.SelectedItem;
             produto.CodBarras       = txtCodBarras.Text;
             produto.DataValidade    = DateTime.Parse(txtDataValidade.Text);
             produto.Quantidade      = Int32.Parse(txtQuantidade.Text);
@@ -101,32 +102,47 @@ namespace LojaComercial.view
 
             this.Text = "Produto - " + (isCadastro ? "Cadastro" : "Alteração");
 
+            atualizarFornecedor();
+
             if (isCadastro)
             {
-                txtDescricao.Text       = "";
-                txtCodBarras.Text       = "";
-                txtDataValidade.Text    = "";
-                txtQuantidade.Text      = "";
-                txtPrecoCompra.Text     = "";
-                txtPrecoVenda.Text      = "";
+                txtDescricao.Text           = "";
+                cbFornecedor.SelectedIndex  = -1;
+                txtCodBarras.Text           = "";
+                txtDataValidade.Text        = "";
+                txtQuantidade.Text          = "";
+                txtPrecoCompra.Text         = "";
+                txtPrecoVenda.Text          = "";
             }
             else
             {
-                txtDescricao.Text       = produto.Descricao;
-                txtCodBarras.Text       = produto.CodBarras;
-                txtDataValidade.Text    = produto.DataValidade.ToString();
-                txtQuantidade.Text      = produto.Quantidade.ToString();
-                txtPrecoCompra.Text     = produto.PrecoCompra.ToString();
-                txtPrecoVenda.Text      = produto.PrecoVenda.ToString();
+                txtDescricao.Text           = produto.Descricao;
+                cbFornecedor.SelectedIndex  = cbFornecedor.FindString(produto.Fornecedor.Nome);
+                txtCodBarras.Text           = produto.CodBarras;
+                txtDataValidade.Text        = produto.DataValidade.ToString("dd/MM/yyyy");
+                txtQuantidade.Text          = produto.Quantidade.ToString();
+                txtPrecoCompra.Text         = produto.PrecoCompra.ToString("N2");
+                txtPrecoVenda.Text          = produto.PrecoVenda.ToString("N2");
             }
 
             txtDescricao.Focus();
         }
 
-        private void FrmProduto_Load(object sender, EventArgs e)
+        private void atualizarFornecedor()
         {
-            cbFornecedor.DataSource    = FornecedorController.lista();
+            cbFornecedor.DataSource = FornecedorController.lista();
             cbFornecedor.DisplayMember = "Nome";
+            cbFornecedor.ValueMember = "Id";
+        }
+
+        private void imgAddFornecedor_Click(object sender, EventArgs e)
+        {
+            FrmConsultaFornecedores frmConsultaFornecedores = new FrmConsultaFornecedores();
+
+            frmConsultaFornecedores.ShowDialog();
+
+            atualizarFornecedor();
+
         }
     }
 }

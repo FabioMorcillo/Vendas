@@ -40,7 +40,6 @@ namespace LojaComercial.view
 
         private void atualizarRegistros()
         {
-            
             dataGridView1.DataSource = OperadorController.lista();
         }
 
@@ -83,6 +82,8 @@ namespace LojaComercial.view
             frmOperador.inicializar(null);
 
             frmOperador.ShowDialog();
+
+            atualizarRegistros();
         }
 
         private void imgEdit_Click(object sender, EventArgs e)
@@ -126,6 +127,16 @@ namespace LojaComercial.view
                 MessageBox.Show("Nenhum operador selecionado !");
             }
             
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

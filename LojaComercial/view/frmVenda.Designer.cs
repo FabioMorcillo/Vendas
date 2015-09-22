@@ -364,9 +364,9 @@
             // lstProdutos
             // 
             this.lstProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstProdutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstProdutos.Font = new System.Drawing.Font("Courier New", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstProdutos.FormattingEnabled = true;
-            this.lstProdutos.ItemHeight = 20;
+            this.lstProdutos.ItemHeight = 65;
             this.lstProdutos.Items.AddRange(new object[] {
             "1 x Item 1",
             "1 x Item 1",
